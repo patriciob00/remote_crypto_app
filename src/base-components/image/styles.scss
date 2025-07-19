@@ -1,0 +1,12 @@
+@use '../../styles/mixins' as *;
+@use "../../styles/variables" as v;
+
+.image {
+  margin: 0.2rem;
+  height: fit-content;
+  box-sizing: border-box;
+  width: v.$size-medium;
+
+  @include size-variants;
+  
+}

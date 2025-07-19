@@ -1,0 +1,29 @@
+@use "variables";
+
+@mixin font-size-variants {
+  &.large {
+    font-size: variables.$size-large;
+  }
+
+  &.medium {
+    font-size: variables.$size-medium;
+  }
+
+  &.small {
+    font-size: variables.$size-small;
+  }
+}
+
+@mixin size-variants {
+  &.large {
+    width: variables.$size-large;
+  }
+
+  &.medium {
+    width: variables.$size-medium;
+  }
+
+  &.small {
+    width: variables.$size-small;
+  }
+}

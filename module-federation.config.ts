@@ -1,0 +1,23 @@
+export const mfConfig = {
+  name: "remote_crypto_app",
+  filename: "remoteEntry.js",
+  exposes: {
+    "./SkeletonCard": "./src/base-components/skeleton-card/index.tsx",
+    "./BackgroundWrapper": "./src/base-components/background-wrapper/index.tsx",
+    "./Title": "./src/base-components/title/index.tsx",
+    "./Paragraph": "./src/base-components/paragraph/index.tsx",
+    './CryptoItemsList': './src/components/crypto-items-list/index.tsx',
+    './CryptoItemsListWithinBox': './src/components/crypto-items-list-within-box/index.tsx',
+    './useCryptoTracker': './src/core/hooks/useCryptoTracker.ts',
+    './types': './src/core/types/types.ts',
+    './DEFAULT_CRYPTO_IDS': './src/core/constants/cryptoIds.ts',
+    './cryptoStore': './src/core/store/crypto.store.ts',
+    './detailedCryptoStore': './src/core/store/detailedCrypto.store.ts',
+    './CryptoCardHighlight': './src/components/crypto-card-highlight/index.tsx',
+  },
+  shared: {
+    react: { singleton: true, eager: true },
+    "react-dom": { singleton: true, eager: true },
+    zustand: { singleton: true, eager: true },
+  },
+};

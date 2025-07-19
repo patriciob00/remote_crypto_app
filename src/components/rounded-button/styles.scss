@@ -1,0 +1,25 @@
+.rounded-button {
+  background-color: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  border: 3px solid rgba(255,255,255,0.2);
+  box-shadow: -2px 3px 8px rgba(8,7,16,0.6);
+  border-radius: 50%;
+  height: fit-content;
+  width: fit-content;
+  padding: .5rem;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+
+  will-change: box-shadow;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    box-shadow: -4px 4px 10px rgba(8,7,16,0.65);
+    border: 3px solid rgba(255,255,255,0.1);
+    cursor: pointer;
+  }
+}

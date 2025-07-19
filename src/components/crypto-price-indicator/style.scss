@@ -1,0 +1,28 @@
+.crypto-price-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  &.up {
+    color: green;
+  }
+
+  &.down {
+    color: red;
+  }
+
+  &.stable {
+    color: white;
+
+  }
+
+  svg {
+    color: currentColor;
+  }
+  .price-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+}

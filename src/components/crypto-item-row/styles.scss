@@ -1,0 +1,33 @@
+.crypto-item-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.2em 0.3em;
+  background-color: transparent;
+  will-change: background-color;
+  transition: all .2s ease-in-out;
+  border-radius: 7px;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: space-between;
+
+  &:hover {
+    background-color: rgba(0,0,0,0.3);
+    cursor: pointer;
+  }
+
+  >div {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    &:first-of-type {  
+      justify-content: flex-start;
+      flex-grow: 2;
+      gap: 5%;
+    };
+    &:last-of-type {
+      justify-content: flex-end;
+      flex-grow: 1;
+    }
+  }
+}

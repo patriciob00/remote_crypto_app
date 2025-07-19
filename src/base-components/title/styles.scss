@@ -1,0 +1,12 @@
+@use '../../styles/mixins' as *;
+@use "../../styles/variables" as v;
+
+.title {
+  color: white;
+  margin: 10px 0 5px 0;                      
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  font-size: v.$size-large;
+  
+  @include font-size-variants;
+}

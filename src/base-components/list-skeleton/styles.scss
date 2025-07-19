@@ -1,0 +1,47 @@
+// src/base-components/list-skeleton/styles.scss
+
+.list-skeleton-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.list-skeleton-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background: #1a1a1a;
+
+  .skeleton {
+    background: linear-gradient(90deg, #2a2a2a, #3a3a3a, #2a2a2a);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+    border-radius: 0.25rem;
+
+    &.logo {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    &.name {
+      width: 30%;
+      height: 1rem;
+    }
+
+    &.price {
+      width: 20%;
+      height: 1rem;
+    }
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
