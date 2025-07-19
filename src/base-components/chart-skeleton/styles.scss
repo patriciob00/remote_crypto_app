@@ -1,0 +1,26 @@
+.chart-skeleton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+
+  .skeleton-line {
+    width: 90%;
+    height: 2px;
+    background: linear-gradient(90deg, #444, #666, #444);
+    animation: loading 1.5s infinite linear;
+  }
+
+  @keyframes loading {
+    0% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}

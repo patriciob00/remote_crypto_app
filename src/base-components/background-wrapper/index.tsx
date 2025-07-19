@@ -1,13 +1,13 @@
-import React, { PropsWithChildren, CSSProperties } from 'react'
+import React, { PropsWithChildren, CSSProperties, HTMLAttributes } from 'react'
 import './styles.scss'
 
-type Props = PropsWithChildren<{
-  style?: CSSProperties;
-}>;
+type Props = PropsWithChildren<HTMLAttributes<HTMLDivElement>>
 
-const BackgroundWrapper = ({ children, style = {} }: Props) => {
+const BackgroundWrapper = ({ children, className = '', ...rest }: Props) => {
   return (
-    <div className='background-wrapper' style={style}>{children}</div>
+    <div className={`background-wrapper ${className}`} {...rest}>
+      {children}
+    </div>
   )
 }
 

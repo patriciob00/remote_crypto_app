@@ -2,6 +2,12 @@ import { CryptoInfo, DetailedCryptoInfo } from '../types/types'
 import { adaptFromCoinGecko } from '../adapters/coingecko.adapter'
 import { adaptDetailedFromCoinGecko } from '../adapters/coingeckoDetailed.adapter'
 
+const API_KEY = process.env.COINGECKO_API_KEY;
+
+console.log('API KEY:', process.env.COINGECKO_API_KEY)
+
+const BASE_URL = 'https://api.coingecko.com/api/v3/coins'
+
 export async function getCryptoListFromCoinGecko(ids: string[]): Promise<CryptoInfo[]> {
   if (ids.length === 0) return []
 
@@ -14,7 +20,7 @@ export async function getCryptoListFromCoinGecko(ids: string[]): Promise<CryptoI
     sparkline: 'false',
   })
 
-  const url = `https://api.coingecko.com/api/v3/coins/markets?${params.toString()}`
+  const url = `${BASE_URL}/markets?${params.toString()}`
 
   const response = await fetch(url)
   if (!response.ok) {
@@ -27,7 +33,7 @@ export async function getCryptoListFromCoinGecko(ids: string[]): Promise<CryptoI
 
 export async function getCryptoDetailsFromCoinGecko(id: string): Promise<DetailedCryptoInfo> {
   try {
-    const res = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${id}`)
+    const res = await fetch(`${BASE_URL}/markets?vs_currency=usd&ids=${id}`)
     const data = await res.json()
 
     if (!Array.isArray(data) || data.length === 0) {
@@ -39,4 +45,19 @@ export async function getCryptoDetailsFromCoinGecko(id: string): Promise<Detaile
     console.error(`Error fetching detailed info of ${id} from CoinGecko:`, error)
     throw error
   }
+}
+
+export async function getCryptoPriceHistoryFromCoinGecko(id: string, days = 7) {
+  const params = new URLSearchParams({
+    vs_currency: 'usd',
+    days: days.toString(),
+  })
+
+  const url = `${BASE_URL}/${id}/market_chart?${params}`
+
+  const response = await fetch(url)
+  if (!response.ok) throw new Error('Failed to fetch price history')
+
+  const data = await response.json()
+  return data.prices as [number, number][]
 }

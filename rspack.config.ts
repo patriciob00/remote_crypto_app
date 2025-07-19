@@ -6,6 +6,10 @@ import { withZephyr } from "zephyr-rspack-plugin";
 
 import { mfConfig } from "./module-federation.config";
 
+import * as dotenv from "dotenv";
+
+dotenv.config(); 
+
 const isDev = process.env.NODE_ENV === "development";
 
 // Target browsers, see: https://github.com/browserslist/browserslist
@@ -107,6 +111,9 @@ export default withZephyr()({
     }),
     new ModuleFederationPlugin(mfConfig),
     isDev ? new RefreshPlugin() : null,
+    new rspack.DefinePlugin({
+    'process.env.COINGECKO_API_KEY': JSON.stringify(process.env.COINGECKO_API_KEY),
+  }),
   ].filter(Boolean),
   optimization: {
     minimizer: [

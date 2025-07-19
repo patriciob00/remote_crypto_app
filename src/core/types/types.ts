@@ -51,3 +51,8 @@ export type DetailedCryptoInfo = {
   lastUpdated: string
   formattedLastUpdated: string
 }
+
+export type ChartDataPoint = {
+  time: string
+  price: number
+}

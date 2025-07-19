@@ -1,13 +1,11 @@
-import React, { CSSProperties, PropsWithChildren } from 'react';
+import React, { CSSProperties, HTMLAttributes, PropsWithChildren } from 'react';
 import './styles.scss';
 
-type Props = PropsWithChildren<{
-  style?: CSSProperties
-}>
+type Props = PropsWithChildren<HTMLAttributes<HTMLDivElement>>
 
-const SkeletonCard = ({ children, style = {} }: Props) => {
+const SkeletonCard = ({ children, className = '', ...rest }: Props) => {
   return (
-    <div className='card' style={style}>
+    <div className={`card ${className}`} {...rest}>
       {children}
     </div>
   )

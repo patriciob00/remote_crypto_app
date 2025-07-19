@@ -1,0 +1,31 @@
+.dashboard-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 1.5rem;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  .left-panel {
+    width: 35%;
+    height: 100%;
+
+    .card {
+      width: 100%!important; 
+    }
+  }
+
+  .right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+
+    .card {
+      width: 100%!important; 
+    }
+  }
+}

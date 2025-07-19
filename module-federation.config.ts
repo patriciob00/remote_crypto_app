@@ -14,6 +14,8 @@ export const mfConfig = {
     './cryptoStore': './src/core/store/crypto.store.ts',
     './detailedCryptoStore': './src/core/store/detailedCrypto.store.ts',
     './CryptoCardHighlight': './src/components/crypto-card-highlight/index.tsx',
+    './CryptoDashboard': './src/screens/crypto-dashboard/index.tsx',
+    './CryptoPriceChart': './src/components/crypto-price-chart/index.tsx',
   },
   shared: {
     react: { singleton: true, eager: true },
