@@ -112,7 +112,7 @@ export default withZephyr()({
     new ModuleFederationPlugin(mfConfig),
     isDev ? new RefreshPlugin() : null,
     new rspack.DefinePlugin({
-    'process.env.COINGECKO_API_KEY': JSON.stringify(process.env.COINGECKO_API_KEY),
+    'import.meta.env.COINGECKO_API_KEY': JSON.stringify(process.env.COINGECKO_API_KEY),
   }),
   ].filter(Boolean),
   optimization: {
