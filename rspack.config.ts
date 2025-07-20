@@ -33,7 +33,7 @@ export default withZephyr()({
     // You need to set a unique value that is not equal to other applications
     uniqueName: "remote_crypto_app",
     // publicPath must be configured if using manifest
-    publicPath: "http://localhost:8082/",
+    publicPath: process.env.PUBLIC_PATH || "auto",
   },
 
   experiments: {
