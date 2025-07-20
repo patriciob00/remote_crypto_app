@@ -14,7 +14,9 @@ type Props = {
 
 const CryptoPriceChart = ({ data }: Props) => {
   if (data.length === 0) {
-    return ''
+    return <div className='chart-container no-data'>
+      <Paragraph>No data to display</Paragraph>
+    </div>
   }
 
   return (

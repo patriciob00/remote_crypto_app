@@ -1,8 +1,21 @@
+@use '../../styles/variables' as v;
+
 .chart-container {
   background-color: rgba(255, 255, 255, 0.03);
   padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+
+  &.no-data {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > p {
+      font-size: v.$size-small;
+      color: #999;
+    }
+  }
 }
 
 .custom-tooltip {
