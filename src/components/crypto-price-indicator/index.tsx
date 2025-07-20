@@ -1,7 +1,7 @@
 import React from 'react'
 import Paragraph from '../../base-components/paragraph';
 import { CryptoInfo } from '../../core/types/types';
-import { MoveUp, MoveDown, Minus,  } from 'lucide-react';
+import { MoveUp, MoveDown } from 'lucide-react';
 
 import './style.scss'
 
@@ -11,7 +11,7 @@ const CryptoPriceIndicator = ({ item } : { item: CryptoInfo }) => {
   const icon = {
     up: <MoveUp className="price-icon up" />,
     down: <MoveDown className="price-icon down" />,
-    stable: <Minus className="price-icon stable" />,
+    stable: '',
   }[priceChangeDirection]
   
   return (

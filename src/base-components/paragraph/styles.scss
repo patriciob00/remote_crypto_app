@@ -1,9 +1,10 @@
 @use '../../styles/mixins' as *;
+@use '../../styles/variables' as v;
 
 .paragraph {
   color: #d0d1d7;
   font-weight: 400;
-  font-size: 0.875rem;
+  font-size: v.$font-size-small;
   font-family: 'Poppins', sans-serif;
 
   @include font-size-variants;

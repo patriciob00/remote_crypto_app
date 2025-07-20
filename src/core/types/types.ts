@@ -1,3 +1,5 @@
+import { HTMLAttributes, PropsWithChildren } from "react"
+
 export type CryptoInfo = {
   id: string
   name: string
@@ -56,3 +58,5 @@ export type ChartDataPoint = {
   time: string
   price: number
 }
+
+export type CommonDivProps = PropsWithChildren<HTMLAttributes<HTMLDivElement>>

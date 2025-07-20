@@ -3,7 +3,7 @@ import { getCryptoListFromCoinGecko } from '../services/coingecko.service'
 import { useCryptoStore } from '../store/crypto.store'
 import { mergePriceChangeWithLastPrices } from '../utils/mergePriceChange'
 
-export function useCryptoTracker(ids: string[], interval = 60000) {
+export function useCryptoTracker(ids: string[], interval = 30000) {
   const { cryptos, setCryptos } = useCryptoStore()
   const lastPrices = useRef<Record<string, number>>({})
 

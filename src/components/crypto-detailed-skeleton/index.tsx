@@ -1,10 +1,14 @@
 import React from 'react'
 import SkeletonCard from '../../base-components/skeleton-card'
 import Paragraph from '../../base-components/paragraph'
+import { CommonDivProps } from '../../core/types/types'
 
-const DetailedSkeleton = () => (
-  <SkeletonCard style={{ width: '50%', minHeight: '48%', alignSelf: 'flex-start' }}>
-    <Paragraph style={{ textAlign: 'center' }}>Loading details...</Paragraph>
+import './styles.scss'
+
+
+const DetailedSkeleton = ({ className = '', ...rest} : CommonDivProps ) => (
+  <SkeletonCard className={`detailed-skeleton-wrapper ${className}`} { ...rest }>
+    <Paragraph>Loading details...</Paragraph>
   </SkeletonCard>
 )
 

@@ -1,3 +1,5 @@
+@use '../../styles/variables' as *;
+
 .card {
   background-color: rgba(255,255,255,0);
   border-radius: 10px;
@@ -12,7 +14,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0.2rem;
+  padding: $size-small * 0.2;
   max-width: 100%;
   max-height: 100%;
   box-sizing: border-box;

@@ -14,7 +14,7 @@ const CryptoDashboard = () => {
   const { history, loading } = useCryptoHistory(selectedCrypto?.id || '')
 
   return (
-    <BackgroundWrapper className="dashboard-wrapper">
+    <div className="dashboard-wrapper">
       <div className="left-panel">
         <CryptoItemsListWithinBox />
       </div>
@@ -27,7 +27,7 @@ const CryptoDashboard = () => {
           <CryptoPriceChart data={history} />
         )}
       </div>
-    </BackgroundWrapper>
+    </div>
   )
 }
 

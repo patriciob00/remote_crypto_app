@@ -1,3 +1,7 @@
 $size-large: 2rem;
 $size-medium: 1.25rem;
 $size-small: 1rem;
+
+$font-size-large: clamp(1.5rem, 1rem + 2vw, 2rem);
+$font-size-medium: clamp(1rem, 0.9rem + 1vw, 1.25rem);
+$font-size-small: clamp(0.875rem, 0.8rem + 0.5vw, 1rem);
