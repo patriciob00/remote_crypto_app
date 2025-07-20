@@ -2,10 +2,10 @@
   "name": "remote-crypto-app",
   "version": "0.0.1",
   "scripts": {
-    "build": "NODE_ENV=production rspack build",
-    "build:dev": "NODE_ENV=development rspack build",
-    "build:start": "cd dist && rspack serve",
-    "start": "NODE_ENV=development rspack serve"
+    "build": "dotenv -e .env.production -- rspack build",
+    "build:dev": "dotenv -e .env.development -- rspack build",
+    "start": "dotenv -e .env.development -- rspack serve",
+    "build:start": "cd dist && rspack serve"
   },
   "devDependencies": {
     "@rspack/cli": "~1.2.0",
@@ -15,6 +15,7 @@
     "@types/react-dom": "^19.0.0",
     "autoprefixer": "^10.1.0",
     "css-loader": "^7.1.2",
+    "dotenv-cli": "^8.0.0",
     "postcss": "^8.2.1",
     "postcss-loader": "^8.0.0",
     "react-refresh": "^0.14.0",
