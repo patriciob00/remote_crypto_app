@@ -17,7 +17,7 @@ const CryptoItemsListWithinBox = ({ style }: Props) => {
   const isLoading = cryptos.length === 0
 
   return (
-    <SkeletonCard style={{ width: '35%', ...style }}>
+    <SkeletonCard style={{ width: '35%',  overflow: 'hidden', ...style }}>
       {isLoading ? (
         <ListSkeleton />
       ) : (
